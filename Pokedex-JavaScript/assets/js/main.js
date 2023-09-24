@@ -1,17 +1,13 @@
-function convertPokemonTypesToHtml(pokemonTypes) {
-    return pokemonTypes.map((typeSlot) => `<li class="type">${typeSlot.type.name}</li>`)
-}
-
 function convertPokemonToHtml(pokemon) {
     return `
-        <li class="pokemon">
-        <span class="number">#${pokemon.order}</span>
+        <li class="pokemon ${pokemon.type}">
+        <span class="number">#${pokemon.pNumber}</span>
         <span class="name">${pokemon.name}</span>
         <div class="detail">
             <ol class="types">
-                ${convertPokemonTypesToHtml(pokemon.types).join('')}
+                ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
             </ol>
-            <img src="${pokemon.sprites.other.dream_world.front_default}" alt="${pokemon.name}">
+            <img src="${pokemon.photo}" alt="${pokemon.name}">
         </div>
     </li> 
     `
@@ -22,7 +18,4 @@ const pokemonList = document.getElementById('pokemonList');
 // O próximo then sempre recebe o retorno do anterior 
 pokeApi.getPokemons().then((pokemons = []) => {
         pokemonList.innerHTML += pokemons.map(convertPokemonToHtml).join('');
-    })
-    .finally(() => {
-        console.log('Requisição concluída!');
     });
