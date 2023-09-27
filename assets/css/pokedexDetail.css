@@ -1,0 +1,161 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f6f8fc; /* Cor de fundo global */
+}
+
+.normal {
+    background-color: #a6a877;
+}
+
+.grass {
+    background-color: #77c85e;
+}
+
+.fire {
+    background-color: #ee7f30;
+}
+
+.water {
+    background-color: #678fee;
+}
+
+.electric {
+    background-color: #f7cf2e;
+}
+
+.ice {
+    background-color: #98d5d7;
+}
+
+.ground {
+    background-color: #dfbf69;
+}
+
+.flying {
+    background-color: #a98ff0;
+}
+
+.poison {
+    background-color: #a040a0;
+}
+
+.fighting {
+    background-color: #bf3029;
+}
+
+.psychic {
+    background-color: #f65687;
+}
+
+.dark {
+    background-color: #725847;
+}
+
+.rock {
+    background-color: #b8a137;
+}
+
+.bug {
+    background-color: #a8b720;
+}
+
+.ghost {
+    background-color: #6e5896;
+}
+
+.steel {
+    background-color: #b9b7cf;
+}
+
+.dragon {
+    background-color: #6f38f6;
+}
+
+.fairy {
+    background-color: #f9aec7;
+}
+
+.pokemon-details-container {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 998px; 
+    width: 100%; 
+}
+
+
+#pokemon-name {
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+}
+
+
+.pokemon-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.pokemon-image img {
+    max-width: 100%;
+    height: auto;
+    background-color: #6c79db; 
+    border-radius: 1rem;
+}
+
+.pokemon-summary {
+    text-align: center;
+    margin-left: 1rem;
+}
+
+.pokemon-summary ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pokemon-summary ul li {
+    background-color: #6c79db; */
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    margin: 0.25rem 0;
+    border-radius: 1rem;
+    font-size: 0.625rem;
+    text-transform: capitalize;
+}
+
+.pokemon-summary .pokemon-number {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+#pokemon-details {
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 576px) {
+    .pokemon-details-container {
+        width: 100%; 
+    }
+
+    .pokemon-info {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0.5rem;
+    }
+
+    .pokemon-summary {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+}

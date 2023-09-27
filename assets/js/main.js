@@ -8,7 +8,7 @@ function convertPokemonToHtml(pokemon) {
     return `
         <li class="pokemon ${pokemon.type}">
         <span class="number">#${pokemon.pNumber}</span>
-        <span class="name">${pokemon.name}</span>
+        <a href="detalhes.html?id=${pokemon.pNumber}" class="name">${pokemon.name}</a>
         <div class="detail">
             <ol class="types">
                 ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
