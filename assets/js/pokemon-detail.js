@@ -23,10 +23,9 @@ function convertPokemonDetailToHtml(pokemon) {
                 ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
             </ol>
             <div class="attributes">
-                <h2>Attributes:</h2>
-                <ul>
-                    <li>Height: ${pokemon.height} decimetres</li>
-                    <li>Weight: ${pokemon.weight} hectograms</li>
+                <ul class="attributes">
+                    <li>Height: ${pokemon.height * 10} Centimeters</li>
+                    <li>Weight: ${pokemon.weight / 10} Kgs</li>
                     <li>HP: ${pokemon.hp}</li>
                     <li>Attack: ${pokemon.attack}</li>
                     <li>Defense: ${pokemon.defense}</li>
@@ -41,14 +40,22 @@ function convertPokemonDetailToHtml(pokemon) {
 }
 
 function displayPokemonDetails(pokemon) {
-    document.getElementById('pokemon-name').textContent = pokemon.name;
-    document.getElementById('pokemon-image').src = pokemon.photo;
+    const pokemonName = document.getElementById('pokemon-name');
+    const pokemonImage = document.getElementById('pokemon-image');
+    const pokemonHeader = document.getElementById('pokemon-header');
     document.getElementById('pokemon-number').textContent = `#${pokemon.pNumber}`;
+
+    pokemonName.textContent = pokemon.name;
+    pokemonImage.src = pokemon.photo;
+
     const detailList = document.getElementById('pokemon-details');
     const detailsContainer = document.getElementById('pokemon-details');
     const detailsHTML = convertPokemonDetailToHtml(pokemon);
 
     detailsContainer.innerHTML = detailsHTML;
+    pokemonName.classList.add(pokemon.type);
+    pokemonImage.classList.add(pokemon.type);
+    pokemonHeader.classList.add(pokemon.type);
 }
 
 loadPokemonDetails();
